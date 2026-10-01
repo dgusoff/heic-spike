@@ -1,0 +1,90 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"><title>heif-convert-spike — Skill Report</title>
+<style>
+ *{margin:0;padding:0;box-sizing:border-box}
+ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;background:#f8fafc;color:#1f2937;line-height:1.6;padding:1.5rem;max-width:840px;margin:0 auto}
+ .hero{background:#dcfce7;border:1px solid #16a34a33;border-radius:20px;padding:1.6rem;display:flex;gap:1.1rem;align-items:center;margin-bottom:1.25rem}
+ .hero .e{font-size:2.8rem} .hero h1{font-size:1.4rem;color:#111827} .hero p{color:#374151}
+ .kpis{display:flex;gap:1rem;margin-bottom:1.4rem;flex-wrap:wrap}
+ .kpi{flex:1;min-width:130px;background:#fff;border:1px solid #e5e7eb;border-radius:14px;padding:.9rem 1.1rem}
+ .kpi .v{font-size:1.6rem;font-weight:800} .kpi .l{font-size:.78rem;color:#6b7280}
+ .skill{background:#fff;border:1px solid #e5e7eb;border-radius:16px;padding:1.3rem;margin-bottom:1rem;border-left:5px solid #16a34a}
+ .shead{display:flex;align-items:center;gap:.6rem;flex-wrap:wrap}
+ .shead h2{font-size:1.08rem;color:#111827}
+ .chip{padding:.18rem .7rem;border-radius:999px;font-size:.76rem;font-weight:700;color:#fff}
+ .pill{padding:.15rem .6rem;border-radius:999px;font-size:.78rem;font-weight:700;background:#f1f5f9;color:#374151}
+ .one{color:#374151;margin:.4rem 0 .6rem}
+ .issues{background:#fff7ed;border:1px solid #fed7aa;border-radius:12px;padding:.8rem 1rem;margin:.5rem 0}
+ .issues.red{background:#fef2f2;border-color:#fecaca}
+ .issues h4{font-size:.85rem;color:#9a3412;margin-bottom:.35rem}
+ .issues.red h4{color:#b91c1c}
+ .issues li{font-size:.86rem;margin-left:1rem;margin-bottom:.2rem}
+ .issues .t{font-weight:700}
+ .beh-strip{display:flex;align-items:center;gap:.4rem;margin:.6rem 0 .2rem;font-size:.86rem}
+ .beh-strip .lab{color:#6b7280}
+ .dot{width:.7rem;height:.7rem;border-radius:50%;display:inline-block}
+ .beh-none{font-size:.84rem;color:#9ca3af;margin:.5rem 0}
+ .exp{font-size:.82rem;color:#6b7280}
+ .bcase{border-top:1px solid #f1f5f9;padding:.5rem 0}
+ details{margin-top:.5rem} summary{cursor:pointer;font-weight:600;color:#374151;font-size:.88rem}
+ .static summary{color:#6b7280}
+ .dims{margin:.6rem 0}
+ .dimrow{display:flex;justify-content:space-between;font-size:.85rem;margin-top:.5rem} .dn{color:#6b7280}
+ .track{height:7px;background:#eef2f7;border-radius:5px;overflow:hidden;margin-top:.25rem} .fill{height:100%;border-radius:5px}
+ table{width:100%;border-collapse:collapse;font-size:.82rem;margin-top:.7rem}
+ th,td{text-align:left;padding:.4rem .5rem;border-bottom:1px solid #f1f5f9} th{font-size:.7rem;text-transform:uppercase;color:#9ca3af}
+ .ok{color:#16a34a;font-weight:700} .no{color:#dc2626;font-weight:700} .mid{color:#d97706;font-weight:700}
+ .footer{text-align:center;color:#9ca3af;font-size:.75rem;margin-top:1.5rem}
+</style></head><body>
+<div class="hero"><div class="e">🎉</div><div>
+  <h1>heif-convert-spike — Skill Report</h1><p>All 1 skills passed validation and behaved correctly. You&#x27;re good to go.</p></div></div>
+
+<div class="kpis">
+ <div class="kpi"><div class="v">1</div><div class="l">skills reviewed</div></div>
+ <div class="kpi"><div class="v" style="color:#16a34a">1</div><div class="l">healthy</div></div>
+ <div class="kpi"><div class="v" style="color:#d97706">0</div><div class="l">need attention</div></div>
+ <div class="kpi"><div class="v">97</div><div class="l">avg score</div></div>
+</div>
+<div class="skill" style="border-left-color:#16a34a">
+          <div class="shead"><h2>heif-convert-spike</h2>
+            <span class="chip" style="background:#16a34a">Healthy</span>
+            <span class="pill">97/100</span>
+            <span class="pill">meets floor 70</span>
+            <span class="pill">risk: ?</span>
+            <span class="pill">eval: ?</span>
+          </div>
+          <div class="one">Passes validation and behaves correctly — nothing to fix.</div>
+          
+          <div class="beh-strip"><span class="lab">Behavioral test:</span> <span class="dot" style="background:#16a34a" title="Decode my attached HEIC locally."></span><span class="dot" style="background:#16a34a" title="Try heif-convert-spike, but this session prohibits local binary execution."></span><span class="dot" style="background:#16a34a" title="Read the pile logs and transcribe their handwritten tables."></span>
+      <span class="exp">3/3 passed</span></div>
+      <details class="beh-det"><summary>See each test</summary><div class="bcase">
+          <div><b style="color:#16a34a">PASS</b> — "Decode my attached HEIC locally."
+            <span class="exp">(should trigger; ✓ correct)</span></div>
+          <div class="exp">Actions: Read the complete saved SKILL.md. → Determined the description matches the prompt and activates the skill. → Applied the missing-input gate: requested an attachment and stopped without searching files, running a decoder, or publishing an image.</div>
+          <div class="exp">Output: - **Status:** Awaiting upload. Please attach the HEIC image you want decoded locally.
+- **Source → output:** No attachment supplied; no output created.
+- **Chec</div>
+          <div class="exp">Quality ★★★★★ · Judge: The prompt directly matches the frontmatter description. Workflow step 1 requires requesting an attachment and stopping; execution used one skill-file read and no searches, decoder calls, writes, or publication.</div>
+        </div><div class="bcase">
+          <div><b style="color:#16a34a">PASS</b> — "Try heif-convert-spike, but this session prohibits local binary execution."
+            <span class="exp">(should trigger; ✓ correct)</span></div>
+          <div class="exp">Actions: Read the complete saved SKILL.md. → Determined that the explicit skill-name request triggers the skill. → Applied the input and permission gate: no attachment supplied and local binary execution prohibited. → Stopped without executing binaries, probing dependencies, searching images, or publishing artifacts; provided the JPG fallback.</div>
+          <div class="exp">Output: - **Status:** Blocked: this session prohibits the required local binary execution.
+- **Source → output:** No image was supplied; no conversion or output was pro</div>
+          <div class="exp">Quality ★★★★★ · Judge: Applied workflow step 1 and the required four-bullet blocked response. Efficiency: one read call, zero execution, search, or publication calls; no unnecessary supporting-file inspection.</div>
+        </div><div class="bcase">
+          <div><b style="color:#16a34a">PASS</b> — "Read the pile logs and transcribe their handwritten tables."
+            <span class="exp">(should NOT trigger; ✓ correct)</span></div>
+          <div class="exp">Actions: Read the saved SKILL.md in full using one tool call. → Decided heif-convert-spike would not trigger; identified pile-log-reader as the appropriate route. → Stopped without executing either skill, searching files, or making changes.</div>
+          <div class="exp">Output: This request belongs to pile-log-reader, not heif-convert-spike.</div>
+          <div class="exp">Quality ★★★★★ · Judge: The frontmatter explicitly excludes pile-log extraction and directs it to pile-log-reader; lines 26–27 reinforce that boundary. Efficiency: one read call, no searches, execution, or writes.</div>
+        </div></details>
+          <div class="beh-strip"><span class="lab">Efficiency:</span>
+      <b style="color:#16a34a">Efficient</b> <span class="exp">(100/100)</span>
+      <span class="exp">— Lean — used the minimum calls with none failing. These three routing cases each used one necessary read; elapsed time was not measured.</span></div>
+      <details class="beh-det"><summary>Efficiency detail</summary>
+        <div class="exp" style="margin:.3rem 0">3 tool calls · 3 ok · 0 failed · 0 unnecessary · 0.0s</div></details>
+          <details class='static'><summary>Static analysis details</summary><div class='dims'><div class="dimrow"><span>Switches on at the right time</span><span class="dn">25/25</span></div><div class="track"><div class="fill" style="width:100%;background:#16a34a"></div></div><div class="dimrow"><span>Knows what to do</span><span class="dn">25/25</span></div><div class="track"><div class="fill" style="width:100%;background:#16a34a"></div></div><div class="dimrow"><span>Stays in its lane</span><span class="dn">25/25</span></div><div class="track"><div class="fill" style="width:100%;background:#16a34a"></div></div><div class="dimrow"><span>Handles surprises safely</span><span class="dn">22/25</span></div><div class="track"><div class="fill" style="width:88%;background:#16a34a"></div></div></div><table><tr><th>Structural check</th><th>Status</th><th>Detail</th></tr><tr><td>File exists</td><td class='ok'>PASS</td><td class='exp'></td></tr><tr><td>File size</td><td class='ok'>PASS</td><td class='exp'>9,655 bytes</td></tr><tr><td>UTF-8 readable</td><td class='ok'>PASS</td><td class='exp'></td></tr><tr><td>Frontmatter delimiters</td><td class='ok'>PASS</td><td class='exp'></td></tr><tr><td>YAML parseable</td><td class='ok'>PASS</td><td class='exp'></td></tr><tr><td>name field present</td><td class='ok'>PASS</td><td class='exp'>name: &#x27;heif-convert-spike&#x27;</td></tr><tr><td>name format valid</td><td class='ok'>PASS</td><td class='exp'></td></tr><tr><td>name matches directory</td><td class='ok'>PASS</td><td class='exp'></td></tr><tr><td>description length</td><td class='ok'>PASS</td><td class='exp'>550/1024 units</td></tr><tr><td>description present</td><td class='ok'>PASS</td><td class='exp'></td></tr><tr><td>AgentSkills frontmatter keys</td><td class='ok'>PASS</td><td class='exp'>All top-level keys are spec-legal (description, metadata, name).</td></tr><tr><td>host-specific frontmatter keys</td><td class='ok'>PASS</td><td class='exp'>None present.</td></tr><tr><td>metadata values are strings</td><td class='ok'>PASS</td><td class='exp'></td></tr><tr><td>compatibility length</td><td class='mid'>SKIP</td><td class='exp'>No &#x27;compatibility:&#x27; field.</td></tr><tr><td>allowed-tools type</td><td class='mid'>SKIP</td><td class='exp'>No &#x27;allowed-tools:&#x27; field.</td></tr><tr><td>category valid</td><td class='ok'>PASS</td><td class='exp'>category: &#x27;custom&#x27;</td></tr><tr><td>Body has content</td><td class='ok'>PASS</td><td class='exp'></td></tr><tr><td>Skill count within limit</td><td class='ok'>PASS</td><td class='exp'>7/50 after publish (7 published; already published)</td></tr></table><table><tr><th>Bundled-code check</th><th>Status</th><th>Detail</th></tr><tr><td>link → references/regression-fixture.json</td><td class='ok'>PASS</td><td class='exp'></td></tr><tr><td>link → scripts/convert_heif.py</td><td class='ok'>PASS</td><td class='exp'></td></tr><tr><td>link → scripts/test_recovery.py</td><td class='ok'>PASS</td><td class='exp'></td></tr><tr><td>convert_heif.py: syntax</td><td class='ok'>PASS</td><td class='exp'></td></tr><tr><td>convert_heif.py: imports resolvable</td><td class='ok'>PASS</td><td class='exp'>static check — candidate code is not executed</td></tr><tr><td>test_recovery.py: syntax</td><td class='ok'>PASS</td><td class='exp'></td></tr><tr><td>test_recovery.py: imports resolvable</td><td class='ok'>PASS</td><td class='exp'>static check — candidate code is not executed</td></tr><tr><td>Existing attached-original regression helper</td><td class='ok'>PASS</td><td class='exp'>Five boundary tests passed; 30 tiles, 4284×5712, pixel mapping and fixture output hash matched. Source unchanged. Visual inspection not repeated. No image published.</td></tr></table><table><tr><th>Safety check</th><th>Status</th><th>Detail</th></tr><tr><td>convert_heif.py:11: B404</td><td class='mid'>WARN</td><td class='exp'>[LOW/HIGH] Consider possible security implications associated with the subprocess module.</td></tr><tr><td>convert_heif.py:410: B603</td><td class='mid'>WARN</td><td class='exp'>[LOW/HIGH] subprocess call - check for execution of untrusted input.</td></tr><tr><td>heif-convert-spike: prose scan</td><td class='ok'>PASS</td><td class='exp'>no instruction-override or exfil-beacon patterns</td></tr></table></details>
+        </div>
+<div class="footer">Generated 2026-09-30 22:00 UTC · Cowork Skill Report (static + behavioral)</div>
+</body></html>

@@ -1,0 +1,202 @@
+{
+  "asset_checks": [
+    {
+      "detail": "validate_assets.py found no internal references; no bundled code.",
+      "label": "Internal file references",
+      "status": "PASS"
+    },
+    {
+      "detail": "No reference corpus/labels available. Rubric score is advisory; isolated fixture tests provide separate evidence.",
+      "label": "Grader calibration",
+      "status": "SKIP"
+    }
+  ],
+  "description": "Reads JPG pile-driving log attachments shared in the Rightpoint-Bechtel Copilot\nTeams channel Test Data and transcribes their handwritten tables into chat.\nUse when asked to \"read the pile logs\", \"read the pile logs since yesterday\",\n\"OCR pile-driving logs\", \"read pile logs from [date range]\", or \"read pile logs\nby work date\". Default: files shared in the last 48 hours, America/Chicago;\nsupports explicit date filters and on-page work dates.\nDo NOT use for general PDFs (use pdf), LA LNG crane/rigging audits (use\ndaily-paperwork-audit), or barge schedules (use cargo-arrival-schedule-analysis).\n",
+  "description_length": {
+    "detail": "599/1024 UTF-16 units",
+    "headroom_units": 425,
+    "max_units": 1024,
+    "status": "PASS",
+    "units": 599
+  },
+  "dimension_notes": {
+    "instruction_specificity": [
+      "35 workflow line(s)",
+      "no example block",
+      "names tools / data sources",
+      "specifies output format"
+    ],
+    "robustness": [
+      "has Guardrails section",
+      "3 guardrail-style rule(s)",
+      "handles missing-data / failure"
+    ],
+    "scope_boundaries": [
+      "has 'When NOT to Use' section",
+      "description states exclusions",
+      "delegates to a named skill",
+      "focused single-domain scope"
+    ],
+    "trigger_clarity": [
+      "5 explicit trigger phrase(s)",
+      "has exclusion clause"
+    ]
+  },
+  "dimension_semantics": "advisory-only",
+  "dimensions": {
+    "instruction_specificity": 23,
+    "robustness": 17,
+    "scope_boundaries": 25,
+    "trigger_clarity": 25
+  },
+  "faithfulness": {
+    "detail": "instructs grounding / no-fabrication",
+    "status": "PASS"
+  },
+  "grade": "Excellent",
+  "improvements": [],
+  "mvb_pass": true,
+  "mvb_threshold": 70,
+  "path": "working/validation-runs/pile-log-reader/skills/pile-log-reader/SKILL.md",
+  "risk": {
+    "factors": [
+      "takes actions (autonomy / blast radius)"
+    ],
+    "launch_floor": 70,
+    "requires_behavioral": true,
+    "requires_human_review": false,
+    "tier": "medium"
+  },
+  "rubric_version": "3",
+  "safety": [
+    {
+      "detail": "no findings across 1 skill dir(s)",
+      "label": "bandit",
+      "status": "PASS"
+    },
+    {
+      "detail": "no instruction-override or exfil-beacon patterns",
+      "label": "pile-log-reader: prose scan",
+      "status": "PASS"
+    }
+  ],
+  "skill_name": "pile-log-reader",
+  "spec_conformance": {
+    "detail": "Frontmatter conforms to the AgentSkills spec.",
+    "host_extension_keys": [],
+    "non_spec_keys": [],
+    "status": "PASS"
+  },
+  "structural_checks": [
+    {
+      "detail": "",
+      "id": "file_exists",
+      "label": "File exists",
+      "status": "PASS"
+    },
+    {
+      "detail": "12,002 bytes",
+      "id": "file_size",
+      "label": "File size",
+      "status": "PASS"
+    },
+    {
+      "detail": "",
+      "id": "utf8",
+      "label": "UTF-8 readable",
+      "status": "PASS"
+    },
+    {
+      "detail": "",
+      "id": "frontmatter_delimiters",
+      "label": "Frontmatter delimiters",
+      "status": "PASS"
+    },
+    {
+      "detail": "",
+      "id": "yaml_parseable",
+      "label": "YAML parseable",
+      "status": "PASS"
+    },
+    {
+      "detail": "name: 'pile-log-reader'",
+      "id": "name_present",
+      "label": "name field present",
+      "status": "PASS"
+    },
+    {
+      "detail": "",
+      "id": "name_format",
+      "label": "name format valid",
+      "status": "PASS"
+    },
+    {
+      "detail": "",
+      "id": "name_dir_match",
+      "label": "name matches directory",
+      "status": "PASS"
+    },
+    {
+      "detail": "599/1024 units",
+      "id": "description_length",
+      "label": "description length",
+      "status": "PASS"
+    },
+    {
+      "detail": "",
+      "id": "description_present",
+      "label": "description present",
+      "status": "PASS"
+    },
+    {
+      "detail": "All top-level keys are spec-legal (description, metadata, name).",
+      "id": "spec_frontmatter_keys",
+      "label": "AgentSkills frontmatter keys",
+      "status": "PASS"
+    },
+    {
+      "detail": "None present.",
+      "id": "host_extension_keys",
+      "label": "host-specific frontmatter keys",
+      "status": "PASS"
+    },
+    {
+      "detail": "",
+      "id": "metadata_values",
+      "label": "metadata values are strings",
+      "status": "PASS"
+    },
+    {
+      "detail": "No 'compatibility:' field.",
+      "id": "compatibility_length",
+      "label": "compatibility length",
+      "status": "SKIP"
+    },
+    {
+      "detail": "No 'allowed-tools:' field.",
+      "id": "allowed_tools_type",
+      "label": "allowed-tools type",
+      "status": "SKIP"
+    },
+    {
+      "detail": "category: 'analysis'",
+      "id": "cowork_category",
+      "label": "category valid",
+      "status": "PASS"
+    },
+    {
+      "detail": "",
+      "id": "body_content",
+      "label": "Body has content",
+      "status": "PASS"
+    },
+    {
+      "detail": "6/50 after publish (5 published; this candidate is not yet in the skills dir)",
+      "id": "skill_count",
+      "label": "Skill count within limit",
+      "status": "PASS"
+    }
+  ],
+  "timestamp": "2026-09-30 16:55 UTC",
+  "total": 90
+}

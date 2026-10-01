@@ -1,0 +1,19 @@
+{
+  "purpose": "Observed regression fixture, not runtime defaults or a compatibility promise",
+  "source_name": "IMG_20260918_162642.heic",
+  "source_sha256": "e83c064e3554aa611529590dbd98d69fc612e82c89fb30ec77f01e8e237c12c0",
+  "primary_item": 31,
+  "grid_rows": 6,
+  "grid_columns": 5,
+  "tile_count": 30,
+  "tile_size": [896, 960],
+  "grid_size": [4284, 5712],
+  "edge_crop_right_bottom": [196, 48],
+  "orientation": 1,
+  "irot_hex": "00",
+  "output_sha256": "a76d57c8e3b0f37b6d450602f1977f7e2d9e7bd0f37c2b031fa87b6f9821edfa",
+  "output_mode": "RGB",
+  "color": "8-bit rendering with embedded original primary ICC",
+  "auxiliary_and_hdr_recovery": "not claimed",
+  "visual_review": "Whole-image preview and all four exhaustive full-resolution quadrants derived from reopened PNG; continuous upright scene, no missing or misordered regions"
+}

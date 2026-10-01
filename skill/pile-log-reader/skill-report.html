@@ -1,0 +1,97 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Pile Log Reader — fixture-tested Skill Report</title>
+<style>
+ *{margin:0;padding:0;box-sizing:border-box}
+ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;background:#f8fafc;color:#1f2937;line-height:1.6;padding:1.5rem;max-width:840px;margin:0 auto}
+ .hero{background:#dcfce7;border:1px solid #16a34a33;border-radius:20px;padding:1.6rem;display:flex;gap:1.1rem;align-items:center;margin-bottom:1.25rem}
+ .hero .e{font-size:2.8rem} .hero h1{font-size:1.4rem;color:#111827} .hero p{color:#374151}
+ .kpis{display:flex;gap:1rem;margin-bottom:1.4rem;flex-wrap:wrap}
+ .kpi{flex:1;min-width:130px;background:#fff;border:1px solid #e5e7eb;border-radius:14px;padding:.9rem 1.1rem}
+ .kpi .v{font-size:1.6rem;font-weight:800} .kpi .l{font-size:.78rem;color:#6b7280}
+ .skill{background:#fff;border:1px solid #e5e7eb;border-radius:16px;padding:1.3rem;margin-bottom:1rem;border-left:5px solid #16a34a}
+ .shead{display:flex;align-items:center;gap:.6rem;flex-wrap:wrap}
+ .shead h2{font-size:1.08rem;color:#111827}
+ .chip{padding:.18rem .7rem;border-radius:999px;font-size:.76rem;font-weight:700;color:#fff}
+ .pill{padding:.15rem .6rem;border-radius:999px;font-size:.78rem;font-weight:700;background:#f1f5f9;color:#374151}
+ .one{color:#374151;margin:.4rem 0 .6rem}
+ .issues{background:#fff7ed;border:1px solid #fed7aa;border-radius:12px;padding:.8rem 1rem;margin:.5rem 0}
+ .issues.red{background:#fef2f2;border-color:#fecaca}
+ .issues h4{font-size:.85rem;color:#9a3412;margin-bottom:.35rem}
+ .issues.red h4{color:#b91c1c}
+ .issues li{font-size:.86rem;margin-left:1rem;margin-bottom:.2rem}
+ .issues .t{font-weight:700}
+ .beh-strip{display:flex;align-items:center;gap:.4rem;margin:.6rem 0 .2rem;font-size:.86rem}
+ .beh-strip .lab{color:#6b7280}
+ .dot{width:.7rem;height:.7rem;border-radius:50%;display:inline-block}
+ .beh-none{font-size:.84rem;color:#9ca3af;margin:.5rem 0}
+ .exp{font-size:.82rem;color:#6b7280}
+ .bcase{border-top:1px solid #f1f5f9;padding:.5rem 0}
+ details{margin-top:.5rem} summary{cursor:pointer;font-weight:600;color:#374151;font-size:.88rem}
+ .static summary{color:#6b7280}
+ .dims{margin:.6rem 0}
+ .dimrow{display:flex;justify-content:space-between;font-size:.85rem;margin-top:.5rem} .dn{color:#6b7280}
+ .track{height:7px;background:#eef2f7;border-radius:5px;overflow:hidden;margin-top:.25rem} .fill{height:100%;border-radius:5px}
+ table{width:100%;border-collapse:collapse;font-size:.82rem;margin-top:.7rem}
+ th,td{text-align:left;padding:.4rem .5rem;border-bottom:1px solid #f1f5f9} th{font-size:.7rem;text-transform:uppercase;color:#9ca3af}
+ .ok{color:#16a34a;font-weight:700} .no{color:#dc2626;font-weight:700} .mid{color:#d97706;font-weight:700}
+ .footer{text-align:center;color:#9ca3af;font-size:.75rem;margin-top:1.5rem}
+</style></head><body>
+<div class="hero"><div class="e">🎉</div><div>
+  <h1>Pile Log Reader — fixture-tested Skill Report</h1><p>All 1 skills passed validation and behaved correctly. You&#x27;re good to go.</p></div></div>
+
+<div class="kpis">
+ <div class="kpi"><div class="v">1</div><div class="l">skills reviewed</div></div>
+ <div class="kpi"><div class="v" style="color:#16a34a">1</div><div class="l">healthy</div></div>
+ <div class="kpi"><div class="v" style="color:#d97706">0</div><div class="l">need attention</div></div>
+ <div class="kpi"><div class="v">90</div><div class="l">avg score</div></div>
+</div>
+<div class="skill" style="border-left-color:#16a34a">
+          <div class="shead"><h2>pile-log-reader</h2>
+            <span class="chip" style="background:#16a34a">Healthy</span>
+            <span class="pill">90/100</span>
+            <span class="pill">meets floor 70</span>
+            <span class="pill">risk: ?</span>
+            <span class="pill">eval: ?</span>
+          </div>
+          <div class="one">Passes validation and behaves correctly — nothing to fix.</div>
+          
+          <div class="beh-strip"><span class="lab">Behavioral test:</span> <span class="dot" style="background:#16a34a" title="Read the pile logs."></span><span class="dot" style="background:#16a34a" title="Read the pile logs since yesterday."></span><span class="dot" style="background:#16a34a" title="Read pile logs by work date for September 16 through September 18, 2026."></span><span class="dot" style="background:#16a34a" title="Audit today’s LA LNG crane and rigging paperwork scans against the daily tracker."></span>
+      <span class="exp">4/4 passed</span></div>
+      <details class="beh-det"><summary>See each test</summary><div class="bcase">
+          <div><b style="color:#16a34a">PASS</b> — "Read the pile logs."
+            <span class="exp">(should trigger; ✓ correct)</span></div>
+          <div class="exp">Actions: Read the complete candidate SKILL.md without modifying it; its description explicitly matches the prompt. → Ran one local Python fixture validation using the supplied runtime, complete message/reply results, extracted cells, and byte-identity facts. → Asserted inclusive UTC filtering selects B, C, E and produces two distinct-image groups; excluded A and D. → Transcribed supplied values, retaining duplicate filenames, share timestamps, blanks, uncertainty, and work dates. Made no live service or image calls.</div>
+          <div class="exp">Output: FIXTURE VALIDATION ONLY; no live retrieval, hashing, OCR, or visual verification.
+UTC inclusive: 2026-09-28T16:50:06+00:00 through 2026-09-30T16:50:06+00:00
+Ame</div>
+          <div class="exp">Quality ★★★★★ · Judge: Assertions confirmed B/C/E inclusion, two byte-identity groups, and reply E inclusion despite its old parent; qualifying timestamps were emitted for each share. Trajectory: one full-file read and one successful Python call, no retries or writes; retrieval, pagination, hashing, OCR, and visual accuracy remain untested beyond supplied fixture facts.</div>
+        </div><div class="bcase">
+          <div><b style="color:#16a34a">PASS</b> — "Read the pile logs since yesterday."
+            <span class="exp">(should trigger; ✓ correct)</span></div>
+          <div class="exp">Actions: Read the full SKILL.md; its description explicitly matches the prompt. → Executed the prescribed date normalization and local filtering against the three complete synthetic shares using the supplied runtime. → Transcribed supplied extracted rows without filling blanks or inferring AM/PM; wrote transcription.md and metrics.json under working/pile-log-reader-validation-since-yesterday. → Assertions passed: included B/C, excluded A, retained both older handwritten dates and exact cells. Three tool calls total; fixture execution took 0.001631 seconds; zero live, download, or OCR calls. No skill modifications.</div>
+          <div class="exp">Output: Source: Rightpoint-Bechtel Copilot → Test Data.
+Filter: September 29, 2026 00:00:00 through September 30, 2026 11:50:06, inclusive, America/Chicago (CDT, UTC−05</div>
+          <div class="exp">Quality ★★★★☆ · Judge: Verified inclusive start at 2026-09-29T05:00:00Z, selected B/C, excluded A, and preserved both supplied rows. Coverage is fixture-only: retrieval, pagination, actual image hashing, OCR, and visual verification were not tested; synthetic-token hashes only exercised grouping.</div>
+        </div><div class="bcase">
+          <div><b style="color:#16a34a">PASS</b> — "Read pile logs by work date for September 16 through September 18, 2026."
+            <span class="exp">(should trigger; ✓ correct)</span></div>
+          <div class="exp">Actions: Read the complete candidate SKILL.md; its description explicitly matches work-date requests. → Created a fixture executor in working/pile-log-reader-validation without modifying the candidate. → Executed Python datetime/zoneinfo normalization and examined both supplied shares without a sharing-time prefilter. → Wrote transcription.md and passed assertions for two matched rows, two unclassifiable rows, one excluded row, and inclusive calendar boundaries.</div>
+          <div class="exp">Output: Filter: September 16–18, 2026 inclusive, America/Chicago; September 16 00:00 ≤ work date &lt; September 19 00:00 (exclusive).
+Basis: handwritten work dates, not ch</div>
+          <div class="exp">Quality ★★★★★ · Judge: Fixture assertions confirmed old.jpg rows 1/2 matched, row 3 was excluded, and old.jpg row 4 plus recent.jpg row 1 remained unclassifiable. Three tool calls (read, patch, execute) completed validation; live pagination, downloads, hashing, OCR, and visual verification were intentionally untested, with supplied distinct identities accepted and candidate unchanged.</div>
+        </div><div class="bcase">
+          <div><b style="color:#16a34a">PASS</b> — "Audit today’s LA LNG crane and rigging paperwork scans against the daily tracker."
+            <span class="exp">(should NOT trigger; ✓ correct)</span></div>
+          <div class="exp">Actions: Read the complete pile-log-reader/SKILL.md. → Compared the prompt with the frontmatter scope and explicit crane/rigging audit exclusion. → Determined that pile-log-reader should remain inactive and daily-paperwork-audit is the appropriate route; did not execute either skill or access user data.</div>
+          <div class="exp">Output: </div>
+          <div class="exp">Quality ★★★★★ · Judge: Frontmatter lines 10–11 explicitly exclude LA LNG crane/rigging audits and route them to daily-paperwork-audit. Only one local file read was performed; no live audit or delegation was executed.</div>
+        </div></details>
+          <div class="beh-strip"><span class="lab">Efficiency:</span>
+      <b style="color:#16a34a">Efficient</b> <span class="exp">(100/100)</span>
+      <span class="exp">— Lean — used the minimum calls with none failing. Fixture calls only; full-run wall time unavailable (0 is an unset placeholder), so time efficiency was not measured.</span></div>
+      <details class="beh-det"><summary>Efficiency detail</summary>
+        <div class="exp" style="margin:.3rem 0">9 tool calls · 9 ok · 0 failed · 0 unnecessary · 0.0s</div><ul style='margin:.3rem 0 0 1rem'><li>Verify real retrieval and image-reading performance on the next requested run.</li></ul></details>
+          <details class='static'><summary>Static analysis details</summary><div class='dims'><div class="dimrow"><span>Switches on at the right time</span><span class="dn">25/25</span></div><div class="track"><div class="fill" style="width:100%;background:#16a34a"></div></div><div class="dimrow"><span>Knows what to do</span><span class="dn">23/25</span></div><div class="track"><div class="fill" style="width:92%;background:#16a34a"></div></div><div class="dimrow"><span>Stays in its lane</span><span class="dn">25/25</span></div><div class="track"><div class="fill" style="width:100%;background:#16a34a"></div></div><div class="dimrow"><span>Handles surprises safely</span><span class="dn">17/25</span></div><div class="track"><div class="fill" style="width:68%;background:#d97706"></div></div></div><table><tr><th>Structural check</th><th>Status</th><th>Detail</th></tr><tr><td>File exists</td><td class='ok'>PASS</td><td class='exp'></td></tr><tr><td>File size</td><td class='ok'>PASS</td><td class='exp'>12,002 bytes</td></tr><tr><td>UTF-8 readable</td><td class='ok'>PASS</td><td class='exp'></td></tr><tr><td>Frontmatter delimiters</td><td class='ok'>PASS</td><td class='exp'></td></tr><tr><td>YAML parseable</td><td class='ok'>PASS</td><td class='exp'></td></tr><tr><td>name field present</td><td class='ok'>PASS</td><td class='exp'>name: &#x27;pile-log-reader&#x27;</td></tr><tr><td>name format valid</td><td class='ok'>PASS</td><td class='exp'></td></tr><tr><td>name matches directory</td><td class='ok'>PASS</td><td class='exp'></td></tr><tr><td>description length</td><td class='ok'>PASS</td><td class='exp'>599/1024 units</td></tr><tr><td>description present</td><td class='ok'>PASS</td><td class='exp'></td></tr><tr><td>AgentSkills frontmatter keys</td><td class='ok'>PASS</td><td class='exp'>All top-level keys are spec-legal (description, metadata, name).</td></tr><tr><td>host-specific frontmatter keys</td><td class='ok'>PASS</td><td class='exp'>None present.</td></tr><tr><td>metadata values are strings</td><td class='ok'>PASS</td><td class='exp'></td></tr><tr><td>compatibility length</td><td class='mid'>SKIP</td><td class='exp'>No &#x27;compatibility:&#x27; field.</td></tr><tr><td>allowed-tools type</td><td class='mid'>SKIP</td><td class='exp'>No &#x27;allowed-tools:&#x27; field.</td></tr><tr><td>category valid</td><td class='ok'>PASS</td><td class='exp'>category: &#x27;analysis&#x27;</td></tr><tr><td>Body has content</td><td class='ok'>PASS</td><td class='exp'></td></tr><tr><td>Skill count within limit</td><td class='ok'>PASS</td><td class='exp'>6/50 after publish (5 published; this candidate is not yet in the skills dir)</td></tr></table><table><tr><th>Bundled-code check</th><th>Status</th><th>Detail</th></tr><tr><td>Internal file references</td><td class='ok'>PASS</td><td class='exp'>validate_assets.py found no internal references; no bundled code.</td></tr><tr><td>Grader calibration</td><td class='mid'>SKIP</td><td class='exp'>No reference corpus/labels available. Rubric score is advisory; isolated fixture tests provide separate evidence.</td></tr></table><table><tr><th>Safety check</th><th>Status</th><th>Detail</th></tr><tr><td>bandit</td><td class='ok'>PASS</td><td class='exp'>no findings across 1 skill dir(s)</td></tr><tr><td>pile-log-reader: prose scan</td><td class='ok'>PASS</td><td class='exp'>no instruction-override or exfil-beacon patterns</td></tr></table></details>
+        </div>
+<div class="footer">Generated 2026-09-30 16:55 UTC · Cowork Skill Report (static + behavioral)</div>
+</body></html>
