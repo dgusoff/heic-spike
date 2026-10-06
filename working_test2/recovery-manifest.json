@@ -1,0 +1,7 @@
+{
+  "status": "failed",
+  "source": "C:\\Users\\dgusoff\\Desktop\\pillow-heif-spike\\data\\IMG_20260918_162655.heic",
+  "error": "Nonidentity Exif orientation unsupported",
+  "visual_verification": "not performed",
+  "note": "Any candidates are provisional. Stop and offer JPG; do not publish."
+}

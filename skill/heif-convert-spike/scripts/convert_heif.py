@@ -1,8 +1,10 @@
 """Bounded local HEIF grid recovery: item/hvcC extraction and FFmpeg HEVC decoding.
 
-Only identity-oriented grid primaries with hvc1 tiles and an ICC profile are
-supported. No installation, network, environment inventory or visual-success
-claim. Adapted from the verified local recovery implementation.
+Grid primaries with hvc1 tiles, an ICC profile, and an optional declared
+0/90/180/270-degree 'irot' rotation are supported; the rotation is applied to
+the assembled output. EXIF-only orientation, mirroring and clean-aperture
+crop remain unsupported. No installation, network, environment inventory or
+visual-success claim. Adapted from the verified local recovery implementation.
 """
 import argparse
 import hashlib
@@ -235,8 +237,6 @@ class Container:
         props = self.props(item)
         if "imir" in props or "clap" in props:
             raise ValueError("Mirror/clean-aperture transform unsupported")
-        if "irot" in props and props["irot"] != b"\x00":
-            raise ValueError("Nonidentity/reserved rotation unsupported")
         if "pixi" in props:
             r = Reader(props["pixi"])
             r.fullbox((0,))
@@ -244,6 +244,16 @@ class Container:
             if n != 3 or r.raw(n) != b"\x08\x08\x08":
                 raise ValueError("Only declared 8-bit three-channel primary supported")
             r.done()
+
+    def rotation(self, item):
+        """Return the primary's declared 'irot' angle in degrees counter-clockwise
+        (0/90/180/270), or 0 if the property is absent."""
+        payload = self.props(item).get("irot")
+        if payload is None:
+            return 0
+        if len(payload) != 1 or payload[0] & 0xFC:
+            raise ValueError("Malformed 'irot' property")
+        return (payload[0] & 0x03) * 90
 
     def orientation(self):
         linked = [i for i, k in self.types.items()
@@ -359,6 +369,7 @@ def recover(source, directory, expected=None):
     if any(i == primary and k != "dimg" for i, k in c.refs):
         raise ValueError("Unsupported primary dependencies")
     c.identity(primary)
+    angle = c.rotation(primary)
     orientation = c.orientation()
     r = Reader(c.item_bytes(primary))
     if r.num(1) != 0:
@@ -383,6 +394,8 @@ def recover(source, directory, expected=None):
                for i, k in c.types.items()):
             raise ValueError("Tile-level Exif unsupported")
         c.identity(item)
+        if "irot" in c.props(item):
+            raise ValueError("Tile-level rotation unsupported")
         sizes.append(dimensions(*c.size(item), limit=MAX_TILE_PIXELS))
     tw, th = sizes[0]
     if any(s != (tw, th) for s in sizes) or len(ids) * tw * th > 160_000_000:
@@ -429,9 +442,12 @@ def recover(source, directory, expected=None):
             mapping.append({"item": item, "row": row, "column": col,
                             "size": [tw, th], "origin": [x, y]})
         coded.unlink()
-    output = directory / "primary-full.png"
-    canvas.save(output, icc_profile=icc)
-    with Image.open(output) as check:
+    # Pixel verification always runs against the unrotated, row-major grid
+    # assembly first (canonical tile-grid space), independent of any declared
+    # rotation applied below.
+    assembled = directory / "assembled-grid.png"
+    canvas.save(assembled, icc_profile=icc)
+    with Image.open(assembled) as check:
         check.load()
         if check.size != (width, height) or check.mode != "RGB" or check.info.get("icc_profile") != icc:
             raise ValueError("Reopened PNG verification failed")
@@ -442,17 +458,30 @@ def recover(source, directory, expected=None):
                 region = tile.crop((0, 0, bounds[2] - x, bounds[3] - y))
                 if ImageChops.difference(check.crop(bounds), region).getbbox():
                     raise ValueError("Source-to-PNG pixel mapping mismatch")
-        preview = check.copy()
+        # HEIF 'irot' is a counter-clockwise rotation; PIL's rotate() matches
+        # that convention directly. Applied only after the pixel-verified
+        # grid assembly above, so verification itself never depends on it.
+        final_image = check.rotate(angle, expand=True) if angle else check.copy()
+    assembled.unlink()
+    final_width, final_height = final_image.size
+    output = directory / "primary-full.png"
+    final_image.save(output, icc_profile=icc)
+    with Image.open(output) as oriented:
+        oriented.load()
+        if (oriented.size != (final_width, final_height) or oriented.mode != "RGB"
+                or oriented.info.get("icc_profile") != icc):
+            raise ValueError("Reopened oriented PNG verification failed")
+        preview = oriented.copy()
         preview.thumbnail((1200, 1600))
         preview.save(directory / "full-preview.png", icc_profile=icc)
         quadrants = []
-        for i, bounds in enumerate(((0, 0, width // 2, height // 2),
-                                   (width // 2, 0, width, height // 2),
-                                   (0, height // 2, width // 2, height),
-                                   (width // 2, height // 2, width, height))):
+        for i, bounds in enumerate(((0, 0, final_width // 2, final_height // 2),
+                                   (final_width // 2, 0, final_width, final_height // 2),
+                                   (0, final_height // 2, final_width // 2, final_height),
+                                   (final_width // 2, final_height // 2, final_width, final_height))):
             if bounds[2] > bounds[0] and bounds[3] > bounds[1]:
                 name = f"quadrant-{i + 1}.png"
-                check.crop(bounds).save(directory / name, icc_profile=icc)
+                oriented.crop(bounds).save(directory / name, icc_profile=icc)
                 quadrants.append({"png": name, "bounds": list(bounds)})
     return {
         "status": "candidates_ready", "source": str(source),
@@ -460,19 +489,24 @@ def recover(source, directory, expected=None):
         "decoder": ffmpeg, "decoder_method": "HEIF item/hvcC extraction + FFmpeg HEVC",
         "primary_item": primary, "grid_rows": rows, "grid_columns": cols,
         "grid_size": [width, height], "ispe_size": list(c.size(primary)),
+        "rotation_degrees_applied": angle,
+        "output_size": [final_width, final_height],
         "orientation": orientation,
-        "orientation_evidence": "EXIF identity or absent; no nonidentity HEIF transform",
+        "orientation_evidence": ("EXIF identity or absent; declared HEIF 'irot' rotation "
+                                 "(if any) applied to the output"),
         "transforms": [(k, v.hex()) for k, v in c.props(primary).items()
                        if k in ("irot", "imir", "clap")],
         "decoded_tiles": mapping, "layout": "HEIF dimg reference order, row-major",
         "edge_crop": [cols * tw - width, rows * th - height],
         "output": output.name, "output_sha256": hashlib.sha256(output.read_bytes()).hexdigest(),
-        "pixel_verification": "All visible source tile regions match reopened PNG exactly",
+        "pixel_verification": ("All visible source tile regions match the unrotated grid "
+                                "assembly exactly, prior to applying any declared rotation"),
         "color": "8-bit RGB rendering with embedded original primary ICC; not HDR preservation",
         "auxiliary_recovery": "not attempted", "visual_verification": "pending",
         "preview": "full-preview.png", "quadrants": quadrants,
         "next_gate": "Whole-image and exhaustive full-resolution visual review before publication",
     }
+
 
 
 def main():

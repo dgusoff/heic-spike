@@ -1,0 +1,475 @@
+{
+  "status": "candidates_ready",
+  "source": "C:\\Users\\dgusoff\\Desktop\\pillow-heif-spike\\data\\IMG_20260918_162642.heic",
+  "source_name": "IMG_20260918_162642.heic",
+  "source_sha256": "e83c064e3554aa611529590dbd98d69fc612e82c89fb30ec77f01e8e237c12c0",
+  "decoder": "C:\\Users\\dgusoff\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\site-packages\\imageio_ffmpeg\\binaries\\ffmpeg-win-x86_64-v7.1.exe",
+  "decoder_method": "HEIF item/hvcC extraction + FFmpeg HEVC",
+  "primary_item": 31,
+  "grid_rows": 6,
+  "grid_columns": 5,
+  "grid_size": [
+    4284,
+    5712
+  ],
+  "ispe_size": [
+    4284,
+    5712
+  ],
+  "rotation_degrees_applied": 0,
+  "output_size": [
+    4284,
+    5712
+  ],
+  "orientation": 1,
+  "orientation_evidence": "EXIF identity or absent; declared HEIF 'irot' rotation (if any) applied to the output",
+  "transforms": [
+    [
+      "irot",
+      "00"
+    ]
+  ],
+  "decoded_tiles": [
+    {
+      "item": 1,
+      "row": 0,
+      "column": 0,
+      "size": [
+        896,
+        960
+      ],
+      "origin": [
+        0,
+        0
+      ]
+    },
+    {
+      "item": 2,
+      "row": 0,
+      "column": 1,
+      "size": [
+        896,
+        960
+      ],
+      "origin": [
+        896,
+        0
+      ]
+    },
+    {
+      "item": 3,
+      "row": 0,
+      "column": 2,
+      "size": [
+        896,
+        960
+      ],
+      "origin": [
+        1792,
+        0
+      ]
+    },
+    {
+      "item": 4,
+      "row": 0,
+      "column": 3,
+      "size": [
+        896,
+        960
+      ],
+      "origin": [
+        2688,
+        0
+      ]
+    },
+    {
+      "item": 5,
+      "row": 0,
+      "column": 4,
+      "size": [
+        896,
+        960
+      ],
+      "origin": [
+        3584,
+        0
+      ]
+    },
+    {
+      "item": 6,
+      "row": 1,
+      "column": 0,
+      "size": [
+        896,
+        960
+      ],
+      "origin": [
+        0,
+        960
+      ]
+    },
+    {
+      "item": 7,
+      "row": 1,
+      "column": 1,
+      "size": [
+        896,
+        960
+      ],
+      "origin": [
+        896,
+        960
+      ]
+    },
+    {
+      "item": 8,
+      "row": 1,
+      "column": 2,
+      "size": [
+        896,
+        960
+      ],
+      "origin": [
+        1792,
+        960
+      ]
+    },
+    {
+      "item": 9,
+      "row": 1,
+      "column": 3,
+      "size": [
+        896,
+        960
+      ],
+      "origin": [
+        2688,
+        960
+      ]
+    },
+    {
+      "item": 10,
+      "row": 1,
+      "column": 4,
+      "size": [
+        896,
+        960
+      ],
+      "origin": [
+        3584,
+        960
+      ]
+    },
+    {
+      "item": 11,
+      "row": 2,
+      "column": 0,
+      "size": [
+        896,
+        960
+      ],
+      "origin": [
+        0,
+        1920
+      ]
+    },
+    {
+      "item": 12,
+      "row": 2,
+      "column": 1,
+      "size": [
+        896,
+        960
+      ],
+      "origin": [
+        896,
+        1920
+      ]
+    },
+    {
+      "item": 13,
+      "row": 2,
+      "column": 2,
+      "size": [
+        896,
+        960
+      ],
+      "origin": [
+        1792,
+        1920
+      ]
+    },
+    {
+      "item": 14,
+      "row": 2,
+      "column": 3,
+      "size": [
+        896,
+        960
+      ],
+      "origin": [
+        2688,
+        1920
+      ]
+    },
+    {
+      "item": 15,
+      "row": 2,
+      "column": 4,
+      "size": [
+        896,
+        960
+      ],
+      "origin": [
+        3584,
+        1920
+      ]
+    },
+    {
+      "item": 16,
+      "row": 3,
+      "column": 0,
+      "size": [
+        896,
+        960
+      ],
+      "origin": [
+        0,
+        2880
+      ]
+    },
+    {
+      "item": 17,
+      "row": 3,
+      "column": 1,
+      "size": [
+        896,
+        960
+      ],
+      "origin": [
+        896,
+        2880
+      ]
+    },
+    {
+      "item": 18,
+      "row": 3,
+      "column": 2,
+      "size": [
+        896,
+        960
+      ],
+      "origin": [
+        1792,
+        2880
+      ]
+    },
+    {
+      "item": 19,
+      "row": 3,
+      "column": 3,
+      "size": [
+        896,
+        960
+      ],
+      "origin": [
+        2688,
+        2880
+      ]
+    },
+    {
+      "item": 20,
+      "row": 3,
+      "column": 4,
+      "size": [
+        896,
+        960
+      ],
+      "origin": [
+        3584,
+        2880
+      ]
+    },
+    {
+      "item": 21,
+      "row": 4,
+      "column": 0,
+      "size": [
+        896,
+        960
+      ],
+      "origin": [
+        0,
+        3840
+      ]
+    },
+    {
+      "item": 22,
+      "row": 4,
+      "column": 1,
+      "size": [
+        896,
+        960
+      ],
+      "origin": [
+        896,
+        3840
+      ]
+    },
+    {
+      "item": 23,
+      "row": 4,
+      "column": 2,
+      "size": [
+        896,
+        960
+      ],
+      "origin": [
+        1792,
+        3840
+      ]
+    },
+    {
+      "item": 24,
+      "row": 4,
+      "column": 3,
+      "size": [
+        896,
+        960
+      ],
+      "origin": [
+        2688,
+        3840
+      ]
+    },
+    {
+      "item": 25,
+      "row": 4,
+      "column": 4,
+      "size": [
+        896,
+        960
+      ],
+      "origin": [
+        3584,
+        3840
+      ]
+    },
+    {
+      "item": 26,
+      "row": 5,
+      "column": 0,
+      "size": [
+        896,
+        960
+      ],
+      "origin": [
+        0,
+        4800
+      ]
+    },
+    {
+      "item": 27,
+      "row": 5,
+      "column": 1,
+      "size": [
+        896,
+        960
+      ],
+      "origin": [
+        896,
+        4800
+      ]
+    },
+    {
+      "item": 28,
+      "row": 5,
+      "column": 2,
+      "size": [
+        896,
+        960
+      ],
+      "origin": [
+        1792,
+        4800
+      ]
+    },
+    {
+      "item": 29,
+      "row": 5,
+      "column": 3,
+      "size": [
+        896,
+        960
+      ],
+      "origin": [
+        2688,
+        4800
+      ]
+    },
+    {
+      "item": 30,
+      "row": 5,
+      "column": 4,
+      "size": [
+        896,
+        960
+      ],
+      "origin": [
+        3584,
+        4800
+      ]
+    }
+  ],
+  "layout": "HEIF dimg reference order, row-major",
+  "edge_crop": [
+    196,
+    48
+  ],
+  "output": "primary-full.png",
+  "output_sha256": "c84069a63150b1a8287e4a290c1762b4d9fcf167fc22c902328673169a049c1e",
+  "pixel_verification": "All visible source tile regions match the unrotated grid assembly exactly, prior to applying any declared rotation",
+  "color": "8-bit RGB rendering with embedded original primary ICC; not HDR preservation",
+  "auxiliary_recovery": "not attempted",
+  "visual_verification": "pending",
+  "preview": "full-preview.png",
+  "quadrants": [
+    {
+      "png": "quadrant-1.png",
+      "bounds": [
+        0,
+        0,
+        2142,
+        2856
+      ]
+    },
+    {
+      "png": "quadrant-2.png",
+      "bounds": [
+        2142,
+        0,
+        4284,
+        2856
+      ]
+    },
+    {
+      "png": "quadrant-3.png",
+      "bounds": [
+        0,
+        2856,
+        2142,
+        5712
+      ]
+    },
+    {
+      "png": "quadrant-4.png",
+      "bounds": [
+        2142,
+        2856,
+        4284,
+        5712
+      ]
+    }
+  ],
+  "next_gate": "Whole-image and exhaustive full-resolution visual review before publication"
+}
